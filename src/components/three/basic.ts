@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import gradientImage from "../../assets/gradient2.webp";
+import gradientImage from "../../assets/gradient2.png";
 import { sphere, ring } from "./home";
 import { cube } from "./cube";
 import { CurrentObject, CurrentRingColor, setCurrentObject, setCurrentRingColor } from "../../sharedSignals";
