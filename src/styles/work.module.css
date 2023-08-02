@@ -1,0 +1,162 @@
+.Container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Content {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.Info {
+    width: 50%;
+}
+
+.Info p {
+    width: 70%;
+}
+
+.Title {
+    font-size: 40px;
+    color: #fa666c;
+}
+
+.Stack {
+    color: #f06926;
+}
+
+.StackIcons {
+    display: flex;
+    margin-top: 5px;
+}
+
+.ProjectIcon {
+    margin: 0px 5px;
+    font-size: 25px;
+    fill: #aed9ff;
+}
+
+.Image {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.Image img {
+    width: 600px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid #cececd;
+    animation: 7s linear infinite float alternate;
+}
+
+.Links a {
+    display: block;
+    position: relative;
+    transform: translateY(-20px);
+    color: white;
+    outline: none;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 5px;
+    transition: .2s;
+    margin: 0px 10px;
+}
+
+.Links a:hover {
+    color: black;
+    background: white;
+}
+
+.MoreContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.MoreContainer h1 {
+    font-weight: 800;
+    text-align: center;
+}
+
+.MoreContainer h1 span {
+    color: #d83928;
+    font-weight: 800;
+}
+
+.MoreContainer p {
+    font-size: 20px;
+    text-align: center;
+}
+
+.MoreContainer p span {
+    color: #dfc854;
+}
+
+.MoreContainer p a {
+    color: #2eade7;
+    text-decoration: none;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    100% {
+        transform: translateY(20px);
+    }
+}
+
+
+@media only screen and (max-width: 1150px) {
+    .Image img {
+        width: 500px;
+        height: 300px;
+    }
+}
+
+@media only screen and (max-width:991px) {
+    .Content {
+        flex-direction: column;
+    }
+
+    .Info {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .Info p {
+        width: 90%;
+    }
+
+    .Image {
+        width: 90%;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .Image img {
+        width: 370px;
+        height: 230px;
+    }
+}

@@ -13,6 +13,7 @@
     padding: 10px;
     letter-spacing: 3px;
     border-radius: 5px;
+    text-align: center;
 }
 
 .HomeContainer p {
@@ -38,5 +39,11 @@
 
     100% {
         width: 100%;
+    }
+}
+
+@media only screen and (max-width:991px) {
+    .HomeContainer h1 {
+        font-size: 25px;
     }
 }

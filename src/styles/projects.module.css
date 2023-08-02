@@ -2,7 +2,80 @@
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-end;
     align-items: center;
     color: white;
+}
+
+.ProjectsContent {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.ProjectsHeader {
+    position: absolute;
+    top: 0;
+    transform: translateY(30px);
+}
+
+.WrappedProject {
+    width: 80%;
+    border-radius: 15px;
+    height: 100%;
+    background: rgb(0,0,0, .3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;
+    border: 1px solid white;
+}
+
+.ProjectsArrow {
+    fill: white;
+    font-size: 25px;
+    margin: 0px 5px;
+    transition: .2s;
+}
+
+.ProjectsArrow:hover {
+    opacity: .2;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1370px) {
+    .WrappedProject {
+        width: 98%;
+    }
+}
+
+
+@media only screen and (max-width: 991px) {
+    .ProjectsContent {
+        width: 96%;
+    }
+
+    .ProjectsHeader {
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    .ProjectsArrow {
+        font-size: 20px;
+    }
+
+    .WrappedProject {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .ProjectsContent {
+        width: 99%;
+    }
 }

@@ -31,7 +31,7 @@ const Menu: Component = () => {
       class={style.MenuContent}>
         <BsPerson size={26} fill={CurrentRingColor()} onClick={() => changeScreen(0, "#FFFFFF", sphere)}/>
         <BsCodeSlash size={26} fill={CurrentRingColor()} onClick={() => changeScreen(1, "#00baae", cube)}/>
-        <BsFileCode size={26} fill={CurrentRingColor()} onClick={() => changeScreen(2, "#fb4543", icos)}/>
+        <BsFileCode size={26} fill={CurrentRingColor()} onClick={() => changeScreen(2, "#c094f0", icos)}/>
         <BsChatLeftText size={26} fill={CurrentRingColor()} onClick={() => changeScreen(3, "#3877ec", tetrahedron)}/>
       </Motion.div>
     </div>

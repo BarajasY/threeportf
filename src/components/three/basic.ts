@@ -32,7 +32,7 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 
 function animate() {
     requestAnimationFrame(animate);
-    CurrentObject().rotation.y += .001
+    CurrentObject().rotation.y += .005
     ring.rotation.y += .0005
     renderer.render(scene, camera);
 }

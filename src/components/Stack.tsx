@@ -1,6 +1,6 @@
-import { Component } from "solid-js";
+import { Component, createSignal } from "solid-js";
 import style from "../styles/stack.module.css";
-import { Motion, Presence } from "@motionone/solid";
+import { Motion, Presence, createMotion, motion} from "@motionone/solid";
 import {
   TbBrandBootstrap,
   TbBrandCss3,
@@ -35,10 +35,22 @@ import {
 import { CurrentRingColor } from "../sharedSignals";
 
 const Stack: Component = () => {
+  const [Tech, setTech] = createSignal("");
+  let TechRef: HTMLHeadingElement | undefined;
+
+  const animateStack = (techName: string) => {
+    createMotion(TechRef!, {animate:{opacity: 0}})
+    setTech(techName);
+    setTimeout(() => {
+      createMotion(TechRef!, {animate:{opacity: 1}})
+    }, 100);
+  };
+
   return (
     <Presence>
       <div class={style.StackContainer}>
         <Motion.h1>Stack</Motion.h1>
+        <Motion.h1 class={style.Tech} ref={TechRef}>&#60;{Tech()}/&#62;</Motion.h1>
         <div class={style.StackContent}>
           <Motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -49,19 +61,23 @@ const Stack: Component = () => {
           >
             <p>Frontend</p>
             <div class={style.StackIcons}>
-              <FaBrandsReact class={style.Icon} fill={CurrentRingColor()} />
-              <TbBrandSolidjs class={style.Icon} fill={CurrentRingColor()} />
-              <TbBrandHtml5 class={style.Icon} fill={CurrentRingColor()} />
-              <TbBrandCss3 class={style.Icon} fill={CurrentRingColor()} />
-              <SiTypescript class={style.Icon} fill={CurrentRingColor()} />
-              <SiNextdotjs class={style.Icon} fill={CurrentRingColor()} />
-              <TbBrandJavascript class={style.Icon} fill={CurrentRingColor()} />
-              <TbBrandRedux class={style.Icon} fill={CurrentRingColor()} />
-              <TbBrandBootstrap class={style.Icon} fill={CurrentRingColor()} />
-              <SiDart class={style.Icon} fill={CurrentRingColor()} />
-              <SiThreedotjs class={style.Icon} fill={CurrentRingColor()} />
-              <SiFlutter class={style.Icon} fill={CurrentRingColor()} />
-              <SiTauri class={style.Icon} fill={CurrentRingColor()} />
+              <FaBrandsReact
+                class={style.Icon}
+                fill={CurrentRingColor()}
+                onmouseenter={() => animateStack("React")}
+              />
+              <TbBrandSolidjs class={style.Icon} fill={CurrentRingColor()} onmouseenter={() => animateStack("Solid.js")}/>
+              <TbBrandHtml5 class={style.Icon} fill={CurrentRingColor()} onmouseenter={() => animateStack("HTML5")}/>
+              <TbBrandCss3 class={style.Icon} fill={CurrentRingColor()} onmouseenter={() => animateStack("CSS3")}/>
+              <SiTypescript class={style.Icon} fill={CurrentRingColor()} onmouseenter={() => animateStack("TypeScript")}/>
+              <SiNextdotjs class={style.Icon} fill={CurrentRingColor()} onmouseenter={() => animateStack("Next.js")}/>
+              <TbBrandJavascript class={style.Icon} fill={CurrentRingColor()} onmouseenter={() => animateStack("JavaScript")}/>
+              <TbBrandRedux class={style.Icon} fill={CurrentRingColor()} onmouseenter={() => animateStack("Redux")}/>
+              <TbBrandBootstrap class={style.Icon} fill={CurrentRingColor()} onmouseenter={() => animateStack("Bootstrap")}/>
+              <SiDart class={style.Icon} fill={CurrentRingColor()} onmouseenter={() => animateStack("Dart")}/>
+              <SiThreedotjs class={style.Icon} fill={CurrentRingColor()} onmouseenter={() => animateStack("Three.js")}/>
+              <SiFlutter class={style.Icon} fill={CurrentRingColor()} onmouseenter={() => animateStack("Flutter")}/>
+              <SiTauri class={style.Icon} fill={CurrentRingColor()} onmouseenter={() => animateStack("Tauri")}/>
             </div>
           </Motion.div>
           <Motion.div
@@ -73,11 +89,11 @@ const Stack: Component = () => {
           >
             <p>Backend</p>
             <div class={style.StackIcons}>
-              <FaBrandsRust class={style.Icon} fill={CurrentRingColor()} />
-              <FaBrandsNodeJs class={style.Icon} fill={CurrentRingColor()} />
-              <FaBrandsJava class={style.Icon} fill={CurrentRingColor()} />
-              <SiSpringboot class={style.Icon} fill={CurrentRingColor()} />
-              <SiExpress class={style.Icon} fill={CurrentRingColor()} />
+              <FaBrandsRust class={style.Icon} fill={CurrentRingColor()} onmouseenter={() => animateStack("Rust")}/>
+              <FaBrandsNodeJs class={style.Icon} fill={CurrentRingColor()} onmouseenter={() => animateStack("Node.js")}/>
+              <FaBrandsJava class={style.Icon} fill={CurrentRingColor()} onmouseenter={() => animateStack("Java")}/>
+              <SiSpringboot class={style.Icon} fill={CurrentRingColor()} onmouseenter={() => animateStack("SpringBoot")}/>
+              <SiExpress class={style.Icon} fill={CurrentRingColor()} onmouseenter={() => animateStack("Express.js")}/>
             </div>
           </Motion.div>
           <Motion.div
@@ -89,15 +105,16 @@ const Stack: Component = () => {
           >
             <p>Misc</p>
             <div class={style.StackIcons}>
-              <SiFirebase class={style.Icon} fill={CurrentRingColor()} />
-              <SiPostgresql class={style.Icon} fill={CurrentRingColor()} />
-              <TbBrandMysql class={style.Icon} fill={CurrentRingColor()} />
+              <SiFirebase class={style.Icon} fill={CurrentRingColor()} onmouseenter={() => animateStack("Firebase")}/>
+              <SiPostgresql class={style.Icon} fill={CurrentRingColor()} onmouseenter={() => animateStack("PostgreSQL")}/>
+              <TbBrandMysql class={style.Icon} fill={CurrentRingColor()} onmouseenter={() => animateStack("MySQL")}/>
               <SiMicrosoftsqlserver
                 class={style.Icon}
                 fill={CurrentRingColor()}
+                onmouseenter={() => animateStack("SQL Servier")}
               />
-              <SiUnrealengine class={style.Icon} fill={CurrentRingColor()} />
-              <SiPostman class={style.Icon} fill={CurrentRingColor()} />
+              <SiUnrealengine class={style.Icon} fill={CurrentRingColor()} onmouseenter={() => animateStack("Unreal Engine")}/>
+              <SiPostman class={style.Icon} fill={CurrentRingColor()} onmouseenter={() => animateStack("Postman")}/>
             </div>
           </Motion.div>
         </div>

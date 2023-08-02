@@ -1,13 +1,13 @@
-import { Switch, type Component, Match } from "solid-js";
+import { Switch, type Component, Match, lazy } from "solid-js";
 import style from "./styles/app.module.css";
 import { Presence } from "@motionone/solid";
 import { CurrentScreen } from "./sharedSignals";
-import Menu from "./components/Menu";
 import "./components/three/basic";
-import Home from "./components/Home";
-import Stack from "./components/Stack";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
+const Home = lazy(() => import ("./components/Home"));
+const Stack = lazy(() => import ("./components/Stack"));
+const Projects= lazy(() => import ("./components/Projects"));
+const Contact = lazy(() => import ("./components/Contact"));
+const Menu = lazy(() => import ("./components/Menu"));
 
 const App:Component = () => {
   return (

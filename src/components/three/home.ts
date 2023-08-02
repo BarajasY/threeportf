@@ -7,6 +7,6 @@ export const sphere = new THREE.Mesh(geometry, circlematerial);
 const ringgeometry = new THREE.TorusGeometry(20, 20, 100, 100);
 ringgeometry.rotateX(90);
 const ringmaterial = new THREE.PointsMaterial({
-    size: .005
+    size: .008
 })
 export const ring = new THREE.Points(ringgeometry, ringmaterial);
