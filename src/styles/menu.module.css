@@ -1,0 +1,25 @@
+.MenuContainer {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.MenuContent {
+    border-radius: 30px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    width: 300px;
+    background: rgb(255, 255, 255, 0.2);
+}
+
+.MenuContent svg {
+    transition: .2s;
+}
+
+.MenuContent svg:hover {
+    opacity: .2;
+    cursor: pointer;
+}
