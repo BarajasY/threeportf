@@ -25,11 +25,11 @@
 
 .Title {
     font-size: 40px;
-    color: #fa666c;
+    color: #9c51f8;
 }
 
 .Stack {
-    color: #f06926;
+    color: #9c51f8;
 }
 
 .StackIcons {
@@ -40,7 +40,7 @@
 .ProjectIcon {
     margin: 0px 5px;
     font-size: 25px;
-    fill: #aed9ff;
+    fill: white;
 }
 
 .Image {
