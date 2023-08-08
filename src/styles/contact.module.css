@@ -82,14 +82,21 @@
     }
 
     .ContactWrapper h1:nth-child(1), .ContactWrapper h1:nth-child(3) {
-        font-size: 20px;
+        font-size: 15px;
     }
 
     .Contact p {
-        font-size: 20px;
+        font-size: 15px;
     }
 
     .Socials a {
         background: none;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .Socials a {
+        width: 50px;
+        height: 50px;
     }
 }
